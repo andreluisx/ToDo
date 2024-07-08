@@ -6,7 +6,7 @@ from django.contrib import messages
 
 def register(request):
     if request.method == 'GET':
-        return render(request, 'register.html')
+        return render(request, 'register.html', {'logado': request.user.is_authenticated})
     
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -33,7 +33,7 @@ def register(request):
 
 def login(request):
     if request.method == 'GET':
-        return render(request, 'login.html')
+        return render(request, 'login.html', context={'logado': request.user.is_authenticated})
     
     if request.method == 'POST':
         username = request.POST.get('username')

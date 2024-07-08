@@ -31,12 +31,12 @@ def home(request):
         
         return redirect('/')
                 
-    return render(request, 'index.html', context={'lista': lista, 'user': request.user})
+    return render(request, 'index.html', context={'lista': lista, 'user': request.user, 'logado': request.user.is_authenticated})
 
 
 def adicionar(request):
     if request.method == 'GET':
-        return render(request, 'adicionar.html')
+        return render(request, 'adicionar.html', context={'logado': request.user.is_authenticated})
     else:
         title = request.POST.get('title')
         description = request.POST.get('descricao')
@@ -52,4 +52,4 @@ def excluir(request, id):
     if request.method == 'POST':
         tarefa.delete()
         return redirect('todo_app:home')
-    return render(request, 'excluir.html', {'tarefa': tarefa})
+    return render(request, 'excluir.html', {'tarefa': tarefa, 'logado': request.user.is_authenticated})
