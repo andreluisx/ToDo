@@ -15,6 +15,8 @@ body{
     justify-content: center;
     justify-content: center;
     align-items: center;
+    margin-bottom: 40px;
+    
 }
 .barra-pesquisa{
     height: 6vh;
@@ -37,8 +39,10 @@ body{
     border-style: solid; 
     background-color: var(--primary-color);
     border-color: var(--primary-color);
-    
     border-radius: 12px;
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
+    -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
 }
 .pesquisa{
     height: 90px;
@@ -48,6 +52,9 @@ body{
     display: flex;
     background-color: rgb(255, 255, 255);
     padding-right: 23px;
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
+    -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
 }
 .lista{
     width: 100%;
@@ -91,6 +98,9 @@ body{
     border-color: var(--primary-color);
     background-color: var(--primary-color);
     color: white;
+    -webkit-box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.51);
+    -moz-box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.51);
+    box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.51);
 }
 .checkbox-div{
     padding-right: 20px;
@@ -103,12 +113,16 @@ body{
     align-self: center;
     height: 4vh;
     width: 4vh;
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
+    -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
 }
 .vazia{
     padding-bottom: 30px;
 }
 .tarefa {
     text-align: left;
+ 
 }
 
 .nome-tarefa{
@@ -118,8 +132,8 @@ body{
 }
 
 .atualizar{
-    background-color: rgb(234, 166, 41);
-    margin-top: 10px;
+    background-color: rgb(255, 181, 45);
+    margin-top: 18px;
 }
 
 .data{
@@ -129,6 +143,9 @@ body{
     font-size: 11px;
     justify-content: space-between;
     display: flex;
+    -webkit-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.51);
+    -moz-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.51);
+    box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.51);
 }
 
 #descricao{
@@ -158,3 +175,4 @@ form{
 h1{
     margin-bottom: 20px;
 }
+

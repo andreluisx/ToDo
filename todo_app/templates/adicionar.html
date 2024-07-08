@@ -7,19 +7,23 @@
 {% block content %}
     <div class="principal">
         <div class="barra">
-            <a href="{% url "todo_app:home" %}"><b><p id="voltar">x</p></b></a>
-            <div class="lista">
+            <div class="cabecalho">
                 <h2>Crie uma tarefa: </h2>
+                <a href="{% url "todo_app:home" %}"><b><p id="voltar">x</p></b></a>
+            </div>
+            
+            <div class="lista">
+                
                 <div class="todo">
                     <div class="tarefa">
                         
                         
                         <form action="{% url "todo_app:adicionar" %}" method='POST'>
-                        <h3>Título:</h3>
+                        <h3 class="description">Título:</h3>
                         {% csrf_token %}
-                        <input type="text" name="title" class="barra-pesquisa">
-                        <h3 id="descricao">Descrição:</h3>
-                        <textarea name="descricao" class="barra-pesquisa caixa-maior"></textarea>
+                        <input type="text" name="title" class="barra-pesquisa" placeholder="Digite o Titulo da sua tarefa...">
+                        <h3 id="descricao" class="description">Descrição:</h3>
+                        <textarea name="descricao" placeholder="faça uma descrição legal e bem explicativa :)" class="barra-pesquisa caixa-maior"></textarea>
                     </div>
                         <div class="checkbox-div">
                             <input type="submit" class="botao" value="Criar">
