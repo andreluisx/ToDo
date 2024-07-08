@@ -1,0 +1,33 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+    <div class="container-log">
+        <div class="form-container">
+            <h1>REGISTRO</h1>
+            {% if messages %}
+                <br>
+                {% for message in messages %}
+                    <section class="alert {{message.tags}}">
+                        {{message}}
+                    </section>
+                {% endfor %}
+            {% endif %}
+            <form action="{% url "users:register" %}" method="post">
+                {% csrf_token %}
+                <input type="text" placeholder="your name..." class="input-box" name="name" required>
+                <br>
+                <br>
+                <input type="email" placeholder="email..." class="input-box" name="email" required>
+                <br>
+                <br>
+                <input type="text" placeholder="username..." class="input-box" name="username" required>
+                <br>
+                <br>
+                <input type="password" placeholder="password..." class="input-box" name="password" required>
+                <br>
+                <br>
+                <input type="submit" class="button-submit" value="register" required>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

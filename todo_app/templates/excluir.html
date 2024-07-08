@@ -1,0 +1,33 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block css %}
+   <link rel="stylesheet" href="{% static "todo/excluir.css" %}"> 
+{% endblock css %}
+
+
+{% block content %}
+    <div class="principal">
+        <div class="barra">
+            <a href="{% url "todo_app:home" %}"><b><p id="voltar">x</p></b></a>
+            <div class="lista">
+                <h2>Deseja excluir esta tarefa?</h2>
+                <div class="todo">
+                    <div class="tarefa">
+                        
+                        <h1 id="titulo2">{{tarefa.title}}</h1>
+                        <p>{{tarefa.detalhes}}</p>
+                        
+                    </div>
+                        <div class="checkbox-div">
+                            <form method="POST" action="{% url 'todo_app:excluir' tarefa.id %}">
+                                {% csrf_token %}
+                                <input type="submit" value="Sim" class="botao">
+                            </form>
+                            <a href="{% url "todo_app:home" %}"><input type="submit" value="Não" class="botao"></a>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>    
+    </div>
+{% endblock content %}

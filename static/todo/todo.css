@@ -1,0 +1,151 @@
+body{
+    background-color: rgb(229, 229, 229);
+}
+.titulo{
+    color: white;
+}
+.principal {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.barra-pesquisa{
+    height: 6vh;
+    width: 35vh;
+    border-width: 2px; 
+    border-style: solid; 
+    border-color:  blue;
+    border-radius: 12px;
+    padding-left: 10px;
+    margin-bottom: 0px;
+}
+.barra{
+    align-items: center;
+    width: 50%;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    border-width: 2px; 
+    border-style: solid; 
+    background-color: blue;
+    border-color:  blue;
+    
+    border-radius: 12px;
+}
+.pesquisa{
+    height: 90px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    padding-right: 23px;
+}
+.lista{
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+.botao{
+    height: 6vh;
+    width: 12vh;
+    border-width: 2px; 
+    border-style: solid; 
+    border-color:  blue;
+    border-radius: 12px;
+    background-color: white;
+    font-stretch: expanded;
+    margin-left: 10px;
+}
+
+.botao:hover{
+    background-color: blue;
+    color: white;
+}
+
+
+.adicionar {
+    background-color: rgb(93, 255, 29);
+}
+
+.todo{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    border-width: 2px;
+    border-style: solid;
+    padding: 20px;
+    border-radius: 12px 12px 0px 0px;
+    border-color: blue;
+    background-color: blue;
+    color: white;
+}
+.checkbox-div{
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+#feito{
+    align-self: center;
+    height: 4vh;
+    width: 4vh;
+}
+.vazia{
+    padding-bottom: 30px;
+}
+.tarefa {
+    text-align: left;
+}
+
+.nome-tarefa{
+    color: white;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.atualizar{
+    background-color: rgb(234, 166, 41);
+    margin-top: 10px;
+}
+
+.data{
+    color: rgb(0, 0, 0);
+    padding: 5px 25px 5px 24px;
+    border-radius: 0px 0px 12px 12px;
+    font-size: 11px;
+    justify-content: space-between;
+    display: flex;
+}
+
+#descricao{
+    font-size: 13px;
+}
+
+#orange{
+    background-color: rgb(255, 181, 45);
+}
+
+#green{
+    background-color: rgb(19, 255, 67);;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(20, 48, 75);
+}
+
+.pesquisa form{
+    margin-top: 0px;
+}
+form{
+    text-align: center;
+}

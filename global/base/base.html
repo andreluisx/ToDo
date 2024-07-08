@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <title>{{ title|default:"ToDo" }}</title>
+    {% block css %}{% endblock css %}
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <a href="{% url "todo_app:home" %}"><li>To Do</li></a>
+            <a href="{% url "users:register" %}"><li>Register</li></a>
+            <a href="{% url "users:login" %}"><li>Login</li></a>
+            <a href="{% url "users:sair" %}"><li>Sair</li></a>
+        </ul>
+    </div>
+
+    {% block content %}
+    {% endblock content %}
+    {% block js %}{% endblock js %}
+</body>
+</html>

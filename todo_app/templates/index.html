@@ -1,0 +1,55 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block css %}
+   <link rel="stylesheet" href="{% static "todo/todo.css" %}"> 
+{% endblock css %}
+
+{% block content %}
+    <div class="principal">
+        <div class="barra">
+            <h1 class="titulo">To-Do do {{user.username}}</h1>
+            
+            <div class="pesquisa">
+                <div class="form">
+                    <form action="" method="GET">
+                        <input type="search" placeholder="Buscar tarefa" name='search' class="barra-pesquisa" value="{{ request.GET.search }}">
+                        <input type="submit" value="Buscar" class="botao">
+                    </form>
+                </div>
+                <a href="{% url "todo_app:adicionar" %}"><button class="botao adicionar">Adicionar</button></a>
+            </div>
+            
+            <div class="lista">
+                <form action="{% url "todo_app:home" %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="search" value="{{ request.GET.search }}">
+                    {% if lista %}
+                        {% for tarefa in lista %}
+                            <div class="todo">
+                                <div class="tarefa">
+                                    <h1 class='nome-tarefa'> {{tarefa.title}} </h1>
+                                    <p id="descricao">{{tarefa.detalhes}}</p>
+                                </div>
+                                <div class="checkbox-div">
+                                    <input type="checkbox" value="{{ tarefa.id }}" name="check" id="feito" {% if tarefa.done %}checked{% endif %}>
+                                </div>
+                            </div>
+                            <div class="tarefa data" {% if tarefa.done %} id='green' {% else %} id='orange' {% endif %}>
+                                <p>tarefa criada em: <b>{{ tarefa.crated_at }}</b></p>
+                                <a href="{% url 'todo_app:excluir' tarefa.id %}" value={{ tarefa.id }}"><p>excluir</p></a>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="tarefa vazia">
+                            <h1> Lista vazia </h1>
+                            <p id="descricao">Use o botão "Adicionar" para adicionar elementos na lista</p>
+                        </div>
+                    {% endif %}
+                    <div>
+                        <input type="submit" class="botao adicionar atualizar" value="Atualizar" name="atualizar" id="botao1">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

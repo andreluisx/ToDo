@@ -1,0 +1,33 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block css %}
+   <link rel="stylesheet" href="{% static "todo/adicionar.css" %}"> 
+{% endblock css %}
+
+{% block content %}
+    <div class="principal">
+        <div class="barra">
+            <a href="{% url "todo_app:home" %}"><b><p id="voltar">x</p></b></a>
+            <div class="lista">
+                <h2>Crie uma tarefa: </h2>
+                <div class="todo">
+                    <div class="tarefa">
+                        
+                        
+                        <form action="{% url "todo_app:adicionar" %}" method='POST'>
+                        <h3>Título:</h3>
+                        {% csrf_token %}
+                        <input type="text" name="title" class="barra-pesquisa">
+                        <h3 id="descricao">Descrição:</h3>
+                        <textarea name="descricao" class="barra-pesquisa caixa-maior"></textarea>
+                    </div>
+                        <div class="checkbox-div">
+                            <input type="submit" class="botao" value="Criar">
+                            </form>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>    
+    </div>
+{% endblock content %}
