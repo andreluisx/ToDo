@@ -1,22 +1,11 @@
-body{
-    background-color: rgb(229, 229, 229);
-}
-.titulo{
-    color: white;
-    margin-bottom: 5px;
-}
-
 :root {
-    --primary-color: #04007f;
+    --primary-color: rgba(68,68,68,255);
+    --secondary-color: rgba(34,34,34,255);
+    --vermelha:  rgb(233, 11, 11);
 }
 
-.principal {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    justify-content: center;
-    align-items: center;
-
+h2{
+    color: var(--vermelha);
 }
 
 .barra{
@@ -30,9 +19,11 @@ body{
     border-style: solid; 
     background-color: var(--primary-color);
     border-color: var(--primary-color);
-    
     border-radius: 12px;
     
+}
+.texts{
+    text-shadow: 0 0 0.4em rgb(0, 0, 0), 0 0 0.4em;
 }
 .pesquisa{
     height: 90px;
@@ -45,39 +36,11 @@ body{
 .lista{
     width: 100%;
     padding: 20px;
-    background-color: rgb(255, 42, 42);
+    background-color:var(--secondary-color);
     border-radius: 12px;
     margin-top: 10px;
     
 }
-
-.barra-pesquisa{
-    height: 6vh;
-    width: 50vh;
-    border-width: 2px; 
-    border-style: solid; 
-    border-color: var(--primary-color);
-    border-radius: 12px;
-    padding-left: 10px;
-}
-.botao{
-    height: 6vh;
-    width: 12vh;
-    border-width: 1px; 
-    border-style: solid; 
-    border-color:  var(--primary-color);
-    border-radius: 12px;
-    background-color: white;
-    font-stretch: expanded;
-    margin-left: 10px;
-    transition: background-color 0.3s;
-}
-
-.botao:hover{
-    background-color: rgb(54, 249, 0);
-    color: white;
-}
-
 
 .adicionar {
     background-color: rgb(93, 255, 29);
@@ -98,20 +61,19 @@ body{
     color: white;
 
 }
-.lista p{
+.lista h3{
     padding-top: 20px;
-    padding-bottom: 10px;
 }
 .tarefa {
-    text-align: left;
-    padding: 30px;
+    text-align: center;
+    padding: 60px;
 }
 
 #descricao{
     padding-top: 30px;
 }
 #titulo2{
-    color: white;
+    color:white;
 }
 .caixa-maior{
     margin-top: 1px;
@@ -125,11 +87,7 @@ body{
 }
 
 .checkbox-div{
-    padding-right: 20px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    padding-left: 10px;
 }
 
 a{

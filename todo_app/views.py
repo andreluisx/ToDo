@@ -9,34 +9,37 @@ from django.core.paginator import Paginator
 def home(request):
     lista = Lista.objects.all().filter(user=request.user).order_by('-id')
 
-
     busca = request.GET.get('search')
 
     if busca:
         lista = lista.filter(title__icontains=busca)
 
+    paginator = Paginator(lista, 5)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    
     if request.method == 'POST':
         busca = request.POST.get('search') 
         if busca:
             lista = lista.filter(title__icontains=busca)
 
         checks = request.POST.getlist('check')
-        lista_check = lista.filter(id__in=checks, user=request.user)
         
-        for valor in lista_check:
+        page_number = request.GET.get("page")
+        page_obj = paginator.get_page(page_number)
+
+        for valor in page_obj.object_list:
             valor.done = True
             valor.save()
         
-        for valor in lista:
+        for valor in page_obj.object_list:
             if str(valor.id) not in checks:
                 valor.done = False
                 valor.save()
         
-        return redirect('/')
+        return redirect(f'/?page={page_obj.number}&search={busca}')
 
-    paginator = Paginator(lista, 5)
-    page_number = request.GET.get("page")
-    page_obj = paginator.get_page(page_number)
+
 
     return render(request, 'index.html', context={'lista': lista, 'user': request.user, 'logado': request.user.is_authenticated, "page_obj": page_obj})
 

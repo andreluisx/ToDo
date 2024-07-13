@@ -1,114 +1,75 @@
-body{
-    background-color: rgb(229, 229, 229);
-}
-
 :root {
-    --primary-color: #04007f;
+    --primary-color: rgba(68,68,68,255);
+    --secondary-color: rgba(34,34,34,255);
 }
 
 .titulo{
     color: white;
+    text-shadow: 0 0 0.2em rgb(0, 0, 0), 0 0 0.2em;
 }
 .principal {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    justify-content: center;
-    align-items: center;
     margin-bottom: 40px;
-    
 }
-.barra-pesquisa{
-    height: 6vh;
-    width: 100%;
-    border-width: 1px; 
-    border-style: solid; 
-    border-color:  var(--primary-color);
-    border-radius: 12px;
-    padding-left: 10px;
-    margin-bottom: 0px;
-
-}
-.barra{
-    align-items: center;
-    width: 90%;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 40px;
-    border-width: 1px; 
-    border-style: solid; 
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    border-radius: 12px;
-    -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
-    -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
-    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
-}
-.pesquisa{
-    height: 90px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    display:flex;
-    background-color: rgb(255, 255, 255);
-    padding: 0px 20px;
-    -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
-    -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
-    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
-}
-.lista{
-    width: 100%;
-    padding: 20px;
-    background-color: white;
-    border-radius: 12px;
-    margin-top: 10px;
-}
-
-.botao{
-    height: 6vh;
-    width: 12vh;
-    border-width: 1px; 
-    border-style: solid; 
-    border-color:  var(--primary-color);
-    border-radius: 12px;
-    background-color: white;
-    font-stretch: expanded;
-    margin-left: 10px;
-    transition: background-color 0.3s;
-}
-
-.botao:hover{
-    background-color: var(--primary-color);
-    color: white;
-}
-
-
-.adicionar {
-    background-color: rgb(93, 255, 29);
-}
-
 .todo{
     display: flex;
-    justify-content: space-between;
     margin-bottom: 0px;
     margin-top: 20px;
     border-width: 2px;
     border-style: solid;
     padding: 20px;
     border-radius: 12px 12px 0px 0px;
-    border-color: var(--primary-color);
-    background-color: var(--primary-color);
+    border-color: rgba(68,68,68,255);
+    background-color: rgba(68,68,68,255);
     color: white;
     -webkit-box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.51);
     -moz-box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.51);
     box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.51);
+    justify-content: space-between;
 }
-.checkbox-div{
-    padding-right: 20px;
-    display: flex;
+.barra{
     align-items: center;
-    padding-left: 10px;
+    width: 90%;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    background-color: var(--primary-color) !important;
+    border-radius: 12px;
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
+    -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
+}
+.pesquisa-superior{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display:flex; 
+    background-color: rgba(34,34,34,255);
+    padding: 0px 20px;
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
+    -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
+    
+}
+.pesquisa{
+    height: 65px;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+
+}
+.lista{
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(34,34,34,255);
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+.adicionar {
+    background-color: rgb(58, 230, 92);    color: rgba(34,34,34,255);
+    border: 0px !important;
 }
 
 #feito{
@@ -134,8 +95,11 @@ body{
 }
 
 .atualizar{
-    background-color: rgb(255, 255, 255);
+    background-color: var(--secondary-color);
+    color: white;
     margin: 30px 0px 10px 0px;
+    border: 1px solid var(--primary-color) !important;
+
 }
 
 .data{
@@ -155,11 +119,11 @@ body{
 }
 
 #orange{
-    background-color: rgb(255, 181, 45);
+    background-color: rgb(228, 228, 228);
 }
 
 #green{
-    background-color: rgb(19, 255, 67);;
+    background-color: rgb(58, 230, 92);
 }
 
 a{
@@ -194,6 +158,7 @@ h1{
 .tarefa-vazia{
     text-align: center;
     padding: 20px;
+    color: white;
 }
 /* Paginacao */
 .pagination-input{
@@ -213,6 +178,7 @@ h1{
 
 .pagination a{
     border: 1px solid var(--primary-color) !important;
+    color: white !important;
 }
 
 .pagination a, .pagination span {

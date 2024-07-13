@@ -7,18 +7,18 @@
 {% block content %}
     <div class="principal">
         <div class="barra">
-            <h1 class="titulo">To-Do do {{user.username}}</h1>
-            
-            <div class="pesquisa">
-                <div class="form">
-                    <form action="" method="GET">
-                        <input type="search" placeholder="Buscar tarefa" name='search' class="barra-pesquisa" value="{{ request.GET.search }}">
-                        <input type="submit" value="Buscar" class="botao">
-                    </form>
+            <h1 class="titulo">To-Do do {{user.first_name}}</h1>
+            <div class="pesquisa-superior">
+                <div class="pesquisa">
+                    <div class="form">
+                        <form action="" method="GET">
+                            <input type="search" placeholder="Buscar tarefa" name='search' class="barra-pesquisa" value="{{ request.GET.search }}">
+                            <input type="submit" value="Buscar" class="botao">
+                        </form>
+                    </div>
+                    <a href="{% url "todo_app:adicionar" %}"><button class="botao adicionar">Adicionar</button></a>
                 </div>
-                <a href="{% url "todo_app:adicionar" %}"><button class="botao adicionar">Adicionar</button></a>
             </div>
-            
             <div class="lista">
                 <form action="{% url "todo_app:home" %}" method="POST">
                     {% csrf_token %}
