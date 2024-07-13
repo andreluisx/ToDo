@@ -23,8 +23,8 @@
                 <form action="{% url "todo_app:home" %}" method="POST">
                     {% csrf_token %}
                     <input type="hidden" name="search" value="{{ request.GET.search }}">
-                    {% if lista %}
-                        {% for tarefa in lista %}
+                    {% if page_obj %}
+                        {% for tarefa in page_obj %}
                             <div class="todo">
                                 <div class="tarefa">
                                     <h1 class='nome-tarefa'> {{tarefa.title}} </h1>
@@ -36,17 +36,39 @@
                             </div>
                             <div class="tarefa data" {% if tarefa.done %} id='green' {% else %} id='orange' {% endif %}>
                                 <p>tarefa criada em: <b>{{ tarefa.crated_at }}</b></p>
-                                <a href="{% url 'todo_app:excluir' tarefa.id %}" value={{ tarefa.id }}"><p>excluir</p></a>
+                                <div id="alteracoes">
+                                    <a href="{% url 'todo_app:editar' tarefa.id %}" value={{ tarefa.id }}"><p>editar</p></a>
+                                    <a href="{% url 'todo_app:excluir' tarefa.id %}" value={{ tarefa.id }}"><p>excluir</p></a>
+                                </div>
                             </div>
                         {% endfor %}
                     {% else %}
-                        <div class="tarefa vazia">
+                        <div class="tarefa-vazia">
                             <h1> Lista vazia </h1>
                             <p id="descricao">Use o botão "Adicionar" para adicionar elementos na lista</p>
                         </div>
                     {% endif %}
                     <div>
                         <input type="submit" class="botao adicionar atualizar" value="Atualizar" name="atualizar" id="botao1">
+                        <div class="pagination-input">
+                            <div class="pagination">
+                                <span class="step-links">
+                                    {% if page_obj.has_previous %}
+                                        <a href="?page=1&search={{ request.GET.search }}">&laquo; primeira</a>
+                                        <a href="?page={{ page_obj.previous_page_number }}&search={{ request.GET.search }}">anterior</a>
+                                    {% endif %}
+
+                                    <span class="current">
+                                        Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                                    </span>
+
+                                    {% if page_obj.has_next %}
+                                        <a href="?page={{ page_obj.next_page_number }}&search={{ request.GET.search }}">próxima</a>
+                                        <a href="?page={{ page_obj.paginator.num_pages }}&search={{ request.GET.search }}">última &raquo;</a>
+                                    {% endif %}
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>

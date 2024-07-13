@@ -18,15 +18,17 @@
                         <p>{{tarefa.detalhes}}</p>
                         
                     </div>
-                        <div class="checkbox-div">
-                            <form method="POST" action="{% url 'todo_app:excluir' tarefa.id %}">
-                                {% csrf_token %}
-                                <input type="submit" value="Sim" class="botao">
-                            </form>
-                            <a href="{% url "todo_app:home" %}"><input type="submit" value="Não" class="botao"></a>
-                        </div>
+                        
                     </div> 
+                    <div class="checkbox-div">
+                        <form method="POST" action="{% url 'todo_app:excluir' tarefa.id %}">
+                            {% csrf_token %}
+                            <input type="submit" value="Sim" class="botao">
+                        </form>
+                        <a href="{% url "todo_app:home" %}"><input type="submit" value="Não" class="botao"></a>
+                    </div>
                 </div>
+                
             </div>
         </div>    
     </div>

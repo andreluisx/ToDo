@@ -10,12 +10,11 @@
 </head>
 <body>
     <div class="navbar">
+        <a href="{% url "todo_app:home" %}"><li>To Do</li></a>
         <ul>
             {% if logado %}
-            <a href="{% url "todo_app:home" %}"><li>To Do</li></a>
             <a href="{% url "users:sair" %}"><li>Sair</li></a>
             {% else %}
-            <a href="{% url "todo_app:home" %}"><li>To Do</li></a>
             <a href="{% url "users:register" %}"><li>Register</li></a>
             <a href="{% url "users:login" %}"><li>Login</li></a>
             {% endif %}

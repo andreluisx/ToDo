@@ -21,7 +21,7 @@ body{
 
 .barra{
     align-items: center;
-    width: 50%;
+    width: 90%;
     padding-top: 4px;
     display: flex;
     flex-direction: column;
@@ -63,13 +63,14 @@ body{
 .botao{
     height: 6vh;
     width: 12vh;
-    border-width: 2px; 
+    border-width: 1px; 
     border-style: solid; 
-    border-color: var(--primary-color);
+    border-color:  var(--primary-color);
     border-radius: 12px;
     background-color: white;
     font-stretch: expanded;
     margin-left: 10px;
+    transition: background-color 0.3s;
 }
 
 .botao:hover{
@@ -97,14 +98,17 @@ body{
     color: white;
 
 }
-
+.lista p{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
 .tarefa {
     text-align: left;
-    padding: 40px;
+    padding: 30px;
 }
 
 #descricao{
-    padding-top: 14px;
+    padding-top: 30px;
 }
 #titulo2{
     color: white;

@@ -8,7 +8,8 @@ body {
 .container-log {
     display: flex;
     justify-content: center; 
-    align-items: center;   
+    align-items: center; 
+  
 }
 .input-box {
     padding-bottom: 40px;

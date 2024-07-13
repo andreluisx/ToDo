@@ -21,7 +21,7 @@ body{
 
 .barra{
     align-items: center;
-    width: 50%;
+    width: 90%;
     padding-top: 4px;
     display: flex;
     flex-direction: column;
@@ -57,7 +57,7 @@ body{
 
 .barra-pesquisa{
     height: 6vh;
-    width: 50vh;
+    width: 100%;
     border-width: 2px; 
     border-style: solid; 
     border-color: var(--primary-color);
@@ -69,13 +69,14 @@ body{
 .botao{
     height: 6vh;
     width: 12vh;
-    border-width: 2px; 
+    border-width: 1px; 
     border-style: solid; 
     border-color:  var(--primary-color);
     border-radius: 12px;
     background-color: white;
     font-stretch: expanded;
     margin-left: 10px;
+    transition: background-color 0.3s;
 }
 
 .botao:hover{
@@ -121,7 +122,8 @@ body{
 .caixa-maior{
     margin-top: 1px;
     padding-bottom: 100px;
-    padding-top: 7px;
+    padding-top: 12px;
+    padding-left: 10px;
     text-align: left;
     border-radius: 6px;
     height: 60px;

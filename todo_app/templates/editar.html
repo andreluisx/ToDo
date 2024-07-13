@@ -8,7 +8,7 @@
     <div class="principal">
         <div class="barra">
             <div class="cabecalho">
-                <h2>Crie uma tarefa: </h2>
+                <h2>Edite a tarefa:</h2>
                 <a href="{% url "todo_app:home" %}"><b><p id="voltar">x</p></b></a>
             </div>
             
@@ -18,15 +18,15 @@
                     <div class="tarefa">
                         
                         
-                        <form action="{% url "todo_app:adicionar" %}" method='POST' id="pesquisa-form">
+                        <form action="{% url "todo_app:editar" tarefa.id %}" method='POST' id="pesquisa-form">
                         <h3 class="description">Título:</h3>
                         {% csrf_token %}
-                        <input type="text" name="title" class="barra-pesquisa" placeholder="Digite o Titulo da sua tarefa...">
+                        <input type="text" name="title" class="barra-pesquisa" value="{{tarefa.title}}">
                         <h3 id="descricao" class="description">Descrição:</h3>
-                        <textarea name="descricao" placeholder="faça uma descrição legal e bem explicativa :)" class="barra-pesquisa caixa-maior"></textarea>
+                        <textarea name="descricao" class="barra-pesquisa caixa-maior">{{tarefa.detalhes}}</textarea>
                     </div>
                         <div class="checkbox-div">
-                            <input type="submit" class="botao" value="Criar">
+                            <input type="submit" class="botao" value="Editar">
                             </form>
                         </div>
                     </div> 
